@@ -1,5 +1,5 @@
-INOI_103B 1790 monoblock no yes yes yes no 600
-OLMIO_E29 2994 monoblock no yes yes yes yes 1900
-Texet_TM_D429 2390 monoblock no no yes yes no 1500
-F+_S350 3990 monoblock no yes no yes yes 1800
-Maxvi_B10 3380 monoblock no yes no yes no 1200
+INOI_103B     1790 monoblock no  yes yes yes no  600
+OLMIO_E29     2994 monoblock no  yes yes yes yes 1900
+Texet_TM_D429 2390 monoblock no  no  yes yes yes 500
+F+_S350       3990 monoblock no  no  no  yes yes 1800
+Maxvi_B10     3380 monoblock yes no  no  yes yes 1200
