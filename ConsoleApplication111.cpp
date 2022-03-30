@@ -1,4 +1,4 @@
-﻿#include <iostream>
+#include <iostream>
 #include <fstream>
 #include <string>
 #include <windows.h>
@@ -12,9 +12,11 @@ void main()
 	int amount = 10,//количество смартфонов
 		amount2 = 9,//количество характеристик    
 		answer = -1,
-		answer1 = -1;
+		answer1 = -1,
+		k = 0;
 	string** Smartphone = new string * [amount];
 	string* chosen = new string[amount2];
+	string* couted = new string[amount2];
 
 	for (int i = 0; i < amount; i++)
 	{
@@ -25,6 +27,7 @@ void main()
 		amount4 = 9;//количество характеристик    
 	string** Phone = new string * [amount3];
 	string* chosen1 = new string[amount4];
+	string* couted1 = new string[amount4];
 
 	for (int i = 0; i < amount3; i++)
 	{
@@ -87,14 +90,24 @@ void main()
 
 			cout << "Введите нужное значение\n";
 
-			for (int i = 0; i < amount; i++)
+			cout << k + 1 << " - " << Smartphone[i][t] << "; ";
+			k++;
+
+			for (int i = 1; i < amount; i++)
 			{
-				cout << i + 1 << " - " << Smartphone[i][t] << " (модель " << Smartphone[i][0] << "); ";
+				if (Smartphone[i][t] != Smartphone[i - 1][t])
+				{
+					couted[k] = Smartphone[i][t];
+					cout << k + 1 << " - " << Smartphone[i][t] << "; ";
+					k++;
+				}
 			}
+
+			k = 0;
 
 			cin >> n;
 
-			chosen[t] = Smartphone[n - 1][t];
+			chosen[t] = couted[n - 1];
 
 			cout << "Введите номер характеристики\n";
 			cout << "1 - Цена; 2 - Разрешение экрана; 3 - Модель процессора; 4 - Объем оперативной памяти;\n5 - Объем встроенной памяти; 6 - Количество мегапикселей основной камеры;\n7 - Модуль NFC; 8 - Емкость аккумулятора;\n0 - 3акончить ввод;\n";
@@ -118,14 +131,24 @@ void main()
 
 			cout << "Введите нужное значение\n";
 
-			for (int i = 0; i < amount3; i++)
+			cout << k + 1 << " - " << Phone[i][t] << "; ";
+			k++;
+
+			for (int i = 1; i < amount3; i++)
 			{
-				cout << i + 1 << " - " << Phone[i][t] << " (модель " << Phone[i][0] << "); ";
+				if (Phone[i][t] != Phone[i - 1][t])
+				{
+					couted1[k] = Phone[i][t];
+					cout << k + 1 << " - " << Phone[i][t] << "; ";
+					k++;
+				}
 			}
+
+			k = 0;
 
 			cin >> n;
 
-			chosen1[t] = Phone[n - 1][t];
+			chosen1[t] = couted1[n - 1];
 
 			cout << "Введите номер характеристики\n";
 			cout << "1 - Цена; 2 - Тип корпуса; 3 - Защищенный корпус; 4 - Для пожилых людей;\n5 - Доступ в интернет; 6 - Слот для карты памяти; 7 - Kамера; 8 - Емкость аккумулятора;\n0 - 3акончить ввод;\n";
