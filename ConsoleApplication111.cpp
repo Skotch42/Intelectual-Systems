@@ -10,8 +10,8 @@ void main()
 	setlocale(LC_ALL, "russian");
 
 	//Входные данные, заполнение массивов
-	int amount = 10,//количество смартфонов
-		amount2 = 9,//количество характеристик    
+	int amount = 10,
+	        amount2 = 9,    
 		answer = -1,
 		answer1 = -1,
 		k = 0;
@@ -24,8 +24,8 @@ void main()
 		Smartphone[i] = new string[amount2];
 	}
 
-	int amount3 = 5,//количество телефонов
-		amount4 = 9;//количество характеристик    
+	int amount3 = 5,
+		amount4 = 9;    
 	string** Phone = new string * [amount3];
 	string* chosen1 = new string[amount4];
 	string* couted1 = new string[amount4];
@@ -70,6 +70,7 @@ void main()
 	}
 
 	F2.close();
+	//Заполнение массивов завершено
 
 	cout << "Вам нужен телефон с сенсорным экраном?\n1)Да 2)Нет\n";
 	int n, n1, t;
@@ -159,7 +160,7 @@ void main()
 	{
 		cout << "Непонятное значение!";
 	}
-
+        // Все пользовательские характериситки заполнены
 
 	//Выбор телефона на основе запомненых характеристик
 	int* count = new int[amount];
@@ -221,7 +222,7 @@ void main()
 			}
 		}
 
-		//Вывод ответа
+		//Выбор завершен, вывод ответа
 		cout << "Наиболее подходящий телефон:\n" << Phone[answer1][0];
 	}
 }
